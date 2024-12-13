@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1728212997 source:d:\my code\c++\pointer\list\list.cpp
+	<iostream>
+	"list.h"
+
+1728212997 d:\my code\c++\pointer\list\list.h
+	<iostream>
+
+1728212997 source:d:\my code\c++\pointer\list\main.cpp
+	<iostream>
+	"list.h"
+

@@ -12,6 +12,9 @@ int Func(){
     char nama[50] = "Muhammad";
 
     usia = 52;
+
+    // untuk cek berapa byte dari int
+    cout << sizeof(int) << endl;
   
     // Fungsi "endl" untuk mengakhiri line tersebut dan akan lanjut menambah line baru dibawah. 
     cout << "hello \nhello \n" << endl;

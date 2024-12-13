@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1731729360 source:d:\my code\c++\tp_mod_9\tp_modul_09\flight.cpp
+	<iostream>
+	"flight.h"
+
+1731729428 d:\my code\c++\tp_mod_9\tp_modul_09\flight.h
+	<iostream>
+
+1731729380 source:d:\my code\c++\tp_mod_9\tp_modul_09\main.cpp
+	<iostream>
+	"flight.h"
+

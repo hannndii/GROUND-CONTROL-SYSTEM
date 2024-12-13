@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1731065451 source:d:\my code\c++\main\main.cpp
+	"queue_vaksinasi.h"
+	<iostream>
+
+1731065447 d:\my code\c++\main\queue_vaksinasi.h
+	<iostream>
+	<string>
+
+1731064055 source:d:\my code\c++\main\queue_vaksinasi.cpp
+	"queue_vaksinasi.h"
+	<iostream>
+

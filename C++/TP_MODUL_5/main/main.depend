@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1728803436 source:d:\my code\c++\tp_modul_5\main\main.cpp
+	<iostream>
+	"SLL.h"
+
+1728803349 d:\my code\c++\tp_modul_5\main\sll.h
+	<iostream>
+
+1728804716 source:d:\my code\c++\tp_modul_5\main\sll.cpp
+	<iostream>
+	"SLL.h"
+

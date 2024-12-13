@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1731300166 source:d:\my code\c++\latihan_stack\main.cpp
+	<iostream>
+	"stack.h"
+
+1731298563 d:\my code\c++\latihan_stack\stack.h
+	<iostream>
+
+1731299426 source:d:\my code\c++\latihan_stack\stack.cpp
+	<iostream>
+	"stack.h"
+

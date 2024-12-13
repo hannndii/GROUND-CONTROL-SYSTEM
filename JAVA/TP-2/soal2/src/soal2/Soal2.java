@@ -4,6 +4,8 @@
  */
 package soal2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author tupog
@@ -14,7 +16,13 @@ public class Soal2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        System.out.println("Masukkan nilai: ");
+        double nilai = input.nextDouble();
+        
+        double result = 1.6;
+        
+        System.out.println("Nilai: " + (nilai*result) + " Kilometer");
+        
     }
-    
 }

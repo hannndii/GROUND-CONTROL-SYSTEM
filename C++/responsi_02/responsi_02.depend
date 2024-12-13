@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1727100024 source:c:\users\lauda\documents\c++\responsi_02\main.cpp
+	<iostream>
+	"mahasiswa.h"
+	"SLL.h"
+
+1727100676 source:c:\users\lauda\documents\c++\responsi_02\mahasiswa.cpp
+	"mahasiswa.h"
+
+1727100692 c:\users\lauda\documents\c++\responsi_02\mahasiswa.h
+	<iostream>
+
+1727100435 c:\users\lauda\documents\c++\responsi_02\sll.h
+	"mahasiswa.h"
+
+1727100128 source:c:\users\lauda\documents\c++\responsi_02\sll.cpp
+	"SLL.h"
+

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1731567768 source:d:\my code\c++\latihan uts\latihan_sll\main.cpp
+	<iostream>
+	"SLL.h"
+
+1731567700 d:\my code\c++\latihan uts\latihan_sll\sll.h
+	<iostream>
+
+1731567707 source:d:\my code\c++\latihan uts\latihan_sll\sll.cpp
+	"SLL.h"
+	<iostream>
+
