@@ -1,0 +1,42 @@
+<html>
+    <script>
+        function tes() {
+            let isiKolom1 = prompt("Masukkan isi kolom-1:", "1");
+            let isiKolom2 = prompt("Masukkan isi kolom-2:", "2");
+            let isiKolom3 = prompt("Masukkan isi kolom-3:", "3");
+
+            if (isiKolom1 === null || isiKolom2 === null || isiKolom3 === null) {
+                alert("Penambahan baris dibatalkan.");
+                return; 
+            }
+
+            let tabel = document.getElementById('myTable');
+
+            let newRow = tabel.insertRow();
+
+            let newCell1 = newRow.insertCell(0);
+            newCell1.innerHTML = isiKolom1;
+
+            let newCell2 = newRow.insertCell(1);
+            newCell2.innerHTML = isiKolom2;
+
+            let newCell3 = newRow.insertCell(2);
+            newCell3.innerHTML = isiKolom3;
+        }
+    </script>
+    <body>
+            <button onclick="tes()">Add Row</button>
+            <table id='myTable' border="1">
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                </tr>
+            </table>
+    </body>
+</html>

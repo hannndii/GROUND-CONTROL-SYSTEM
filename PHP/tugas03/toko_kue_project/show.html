@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Daftar Produk - Toko Kue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1>Daftar Produk</h1></div>
+    <div class="content">
+      <a href="insert.html" class="btn" style="text-decoration:none;display:inline-block;margin-bottom:12px">+ Tambah Produk</a>
+      <div style="overflow:auto">
+      <table class="table" role="table">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Kategori</th>
+            <th>Harga (Rp)</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+          <tr><td colspan="5" style="text-align:center;">Memuat data...</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      
+      const apiUrl = 'https://mocki.io/v1/1975e1a2-ac21-4a54-afea-384dcdd8612b';
+
+      $.ajax({
+        url: apiUrl,
+        method: 'GET',
+        dataType: 'json',
+        success: function(data){
+          const productList = $('#product-list');
+          productList.empty();
+
+          $.each(data, function(index, product){
+            const row = `<tr>
+                          <td>${product.nama}</td>
+                          <td>${product.kategori}</td>
+                          <td>${product.harga.toLocaleString()}</td>
+                          <td>${product.stok}</td>
+                          <td>
+                            <a href="edit.html?id=${product.id}" class="btn" style="background: #39a3d9; padding: 6px 10px; font-size: 14px;">Edit</a>
+                          </td>
+                        </tr>`;
+            productList.append(row);
+          });
+        },
+        error: function(err){
+          console.error("Gagal mengambil data:", err);
+          $('#product-list').html('<tr><td colspan="5" style="text-align:center;">Gagal memuat data. Silakan coba lagi.</td></tr>');
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>

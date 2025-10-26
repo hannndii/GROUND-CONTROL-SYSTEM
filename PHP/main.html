@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Layout Table</title>
+</head>
+<body>
+    <table border="1" cellspacing="0" cellpadding="20">
+        <tr>
+            <!-- Kolom kiri: A -->
+            <td rowspan="1" align="center">A</td>
+            <!-- Kolom kanan atas: tabel kecil -->
+            <td>
+                <table border="1" cellspacing="0" cellpadding="20" width="100%">
+                    <tr>
+                        <td align="center">B</td>
+                        <td align="center">C</td>
+                    </tr>
+                    <tr>
+                        <td align="center">D</td>
+                        <td align="center">E</td>
+                    </tr>
+                </table>
+            </td>
+            <!-- Baris bawah: F dan G sejajar -->
+        </tr>
+        <tr>
+            <td rowspan="2" align="center">F</td>
+            <td rowspan="2" align="center">G</td>
+        </tr>
+    </table>
+</body>
+</html>

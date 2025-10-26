@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tambah Produk - Toko Kue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1>Tambah Produk Baru</h1></div>
+    <div class="content">
+      <div class="form-card">
+        <form id="form-tambah" action="javascript:void(0);" method="post">
+          <label class="small">Nama Produk</label>
+          <input class="input" id="nama" name="nama" placeholder="Contoh: Brownies Cokelat" required>
+          <label class="small">Kategori</label>
+          <input class="input" id="kategori" name="kategori" placeholder="Kue / Roti / Minuman">
+          <label class="small">Harga (Rp)</label>
+          <input class="input" id="harga" name="harga" type="number" placeholder="50000">
+          <label class="small">Stok</label>
+          <input class="input" id="stok" name="stok" type="number" placeholder="10">
+          <button class="btn" type="submit">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#form-tambah').submit(function(e){
+        e.preventDefault(); 
+        
+        const newData = {
+          nama: $('#nama').val(),
+          kategori: $('#kategori').val(),
+          harga: parseFloat($('#harga').val()),
+          stok: parseInt($('#stok').val())
+        };
+
+        const apiUrl = 'https://mocki.io/v1/53578433-daf1-429c-a5c6-2ecf18ee529e  ';
+
+        $.ajax({
+          url: apiUrl,
+          method: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(newData),
+          success: function(response){
+            alert(response.message);
+            window.location.href = 'show.html'; 
+          },
+          error: function(err){
+            console.error("Gagal mengirim data:", err);
+            alert("Gagal menambahkan produk. Silakan coba lagi.");
+          }
+        });
+
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .login-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 200px;
+        }
+        #user[type="text"]:focus {
+            background-color: #504c4c;
+            transition: background-color 0.3s;
+        }
+        #pass[type="password"]:focus {
+            background-color: #504c4c;
+            transition: background-color 0.3s;
+        }
+        #btn {
+            /* background-color: #4CAF50; */
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            width: 225px;
+            font-weight: bold;
+        }
+        #btn:hover {
+            background-color: #45a049;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>My Site</h1>
+        <input type="text" placeholder="Username" id="user">
+        <input type="password" placeholder="Password" id="pass">
+        <input type="button" value="Login" id="btn" onclick="alert('Login Successful'), window.location.href='home.html'">
+    </div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP Modul 6</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f7f7f7;
+      }
+
+      .navbar {
+        width: 95%;
+        display: flex;
+
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 12px 60px;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        z-index: 10;
+      }
+
+      .navbar .title {
+        font-weight: 600;
+        font-size: 18px;
+        color: #222;
+        letter-spacing: 0.3px;
+      }
+
+      .navbar .search-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .navbar input[type="text"] {
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        width: 180px;
+        transition: all 0.3s ease;
+      }
+
+      .navbar input[type="text"]:focus {
+        outline: none;
+        border-color: #28a745;
+        box-shadow: 0 0 4px rgba(40, 167, 69, 0.3);
+      }
+
+      .navbar button {
+        padding: 7px 14px;
+        border: 1px solid #28a745;
+        background-color: #28a745;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .navbar button:hover {
+        background-color: #218838;
+      }
+
+      .form-container {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      .btn-container {
+        justify-content:end;
+        padding-left: 180px;
+      }
+
+      .btn-cancel {
+        background-color: #e74c3c;
+        color: white;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn-submit {
+        background-color: #3498db;
+        color: white;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn-cancel:hover {
+        background-color: #c0392b;
+      }
+
+      .btn-submit:hover {
+        background-color: #2980b9;
+      }
+
+      .table-container {
+        margin-top: 40px;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+      }
+
+      table {
+        background-color: black;
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        border: 1px solid silver;
+        padding: 10px;
+        text-align: left;
+        color: white;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      .table-title {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <h2>TP Modul 6</h2>
+      </div>
+      <div class="nav-right">
+        <input type="text" placeholder="Search" class="search-input" />
+        <button class="search-btn">Search</button>
+      </div>
+    </nav>
+
+    <div class="form-container">
+      <h2>Form Pendataan</h2>
+      <form>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" required />
+
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" name="nim" required />
+
+        <label for="angkatan">Angkatan</label>
+        <input type="text" id="angkatan" name="angkatan" required />
+
+        <div class="btn-container">
+          <button type="button" class="btn-cancel">Cancel</button>
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-container">
+      <h3 class="table-title">Table Data</h3>
+      <table>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>NIM</th>
+          <th>Angkatan</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Budi</td>
+          <td>130299000</td>
+          <td>1999</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Cahyo</td>
+          <td>1302212000</td>
+          <td>2021</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Dudi</td>
+          <td>1302201040</td>
+          <td>2020</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

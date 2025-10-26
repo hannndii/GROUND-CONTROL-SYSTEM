@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kalkulator Penjualan - Toko Kue</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  function kalkulasi(){
+    const harga = parseFloat(document.getElementById('harga').value)||0;
+    const qty = parseInt(document.getElementById('qty').value)||0;
+    const diskon = parseFloat(document.getElementById('diskon').value)||0;
+    let subtotal = harga * qty;
+    let pot = subtotal * (diskon/100);
+    let total = subtotal - pot;
+    document.getElementById('subtotal').textContent = subtotal.toLocaleString();
+    document.getElementById('potongan').textContent = pot.toLocaleString();
+    document.getElementById('total').textContent = total.toLocaleString();
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1>Kalkulator Penjualan</h1></div>
+    <div class="content">
+      <div class="card-inline calc">
+        <div style="flex:1">
+          <label class="small">Harga (Rp)</label>
+          <input id="harga" class="input-inline" type="number" value="45000" oninput="kalkulasi()">
+          <label class="small">Jumlah</label>
+          <input id="qty" class="input-inline" type="number" value="1" oninput="kalkulasi()">
+          <label class="small">Diskon (%)</label>
+          <input id="diskon" class="input-inline" type="number" value="0" oninput="kalkulasi()">
+          <button class="btn" style="margin-top:10px" onclick="kalkulasi()">Hitung</button>
+        </div>
+        <div style="min-width:200px;padding-left:12px">
+          <div class="form-card">
+            <p class="small">Subtotal: Rp <strong id="subtotal">0</strong></p>
+            <p class="small">Potongan: Rp <strong id="potongan">0</strong></p>
+            <p class="small">Total: Rp <strong id="total">0</strong></p>
+          </div>
+        </div>
+      </div>
+      <script>kalkulasi()</script>
+    </div>
+  </div>
+</body>
+</html>

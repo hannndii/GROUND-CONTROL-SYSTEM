@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Produk - Toko Kue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1>Edit Produk</h1></div>
+    <div class="content">
+      <div class="form-card">
+        <form id="form-edit" action="javascript:void(0);" method="post">
+          <input type="hidden" id="productId" name="id">
+
+          <label class="small">Nama Produk</label>
+          <input class="input" id="nama" name="nama" placeholder="Memuat..." required>
+          <label class="small">Kategori</label>
+          <input class="input" id="kategori" name="kategori" placeholder="Memuat...">
+          <label class="small">Harga (Rp)</label>
+          <input class="input" id="harga" name="harga" type="number" placeholder="Memuat...">
+          <label class="small">Stok</label>
+          <input class="input" id="stok" name="stok" type="number" placeholder="Memuat...">
+          <button class="btn" type="submit">Update Perubahan</button>
+          <a href="show.html" style="margin-left: 10px; color: var(--muted);">Batal</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+
+      if (!productId) {
+        window.location.href = 'show.html';
+        return;
+      }
+
+      const getApiUrl = `https://mocki.io/v1/1975e1a2-ac21-4a54-afea-384dcdd8612b`; 
+
+      $.ajax({
+        url: getApiUrl,
+        method: 'GET',
+        success: function(product){
+          $('#productId').val(product.id);
+          $('#nama').val(product.nama);
+          $('#kategori').val(product.kategori);
+          $('#harga').val(product.harga);
+          $('#stok').val(product.stok);
+        },
+        error: function(){
+          alert("Gagal mengambil data produk.");
+          window.location.href = 'show.html';
+        }
+      });
+
+      $('#form-edit').submit(function(e){
+        e.preventDefault();
+
+        const updatedData = {
+          nama: $('#nama').val(),
+          kategori: $('#kategori').val(),
+          harga: parseFloat($('#harga').val()),
+          stok: parseInt($('#stok').val())
+        };
+
+        const updateApiUrl = `https://mocki.io/v1/53578433-daf1-429c-a5c6-2ecf18ee529e`;
+
+        $.ajax({
+          url: updateApiUrl,
+          method: 'PUT',
+          contentType: 'application/json',
+          data: JSON.stringify(updatedData),
+          success: function(response){
+            alert(response.message);
+            window.location.href = 'show.html';
+          },
+          error: function(){
+            alert("Gagal memperbarui produk. Silakan coba lagi.");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
